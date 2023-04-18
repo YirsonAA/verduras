@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin/css/estiloLogin.css">
+    <title>Login</title>
+</head>
+<body>
+    <div align="center"><img id="imagen" src="admin/images/login.jpg"></div>
+    <table id="tabLogin">
+        <tr>
+            <td>Usuario</td>
+            <td><input type="text" name="user" id="user"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="pass" id="pass"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Login" id="login" onclick="login()" ></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="correoRecuperar" id="correoRecuperar" placeholder="correo para recuperar contraseña"></td>
+            <td><input type="button" id="btnRecuperar" value="Recuperar contraseña" onclick="recuperarContrasena()"></td>
+        </tr>
+    </table>
+    <script>
+        function login(){
+            var user=document.getElementById("user").value;
+            var pass=document.getElementById("pass").value;
+            if(user!="verduritas"){
+                alert("Usuario no valido");
+            }
+            if(pass!="demo"){
+                alert("Contraseña no valida");
+            }
+            if(user=="verduritas" && pass=="demo" ){
+                document.cookie = "user="+user;
+                location.href = 'admin/inicio.html';
+            }
+        }
+        function recuperarContrasena(){
+            var correoRecuperar=document.getElementById("correoRecuperar").value;
+            location.href = 'mailto:'+correoRecuperar;
+        }
+        
+    </script>
+</body>
+</html>

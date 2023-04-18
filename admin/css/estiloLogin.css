@@ -1,0 +1,17 @@
+/*Centramos la tabla del login*/
+#tabLogin{
+    margin-left: auto;
+    margin-right: auto;
+}
+#imagen{
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#btnRecuperar{
+    background-color: yellow;
+}
+#login{
+    background-color: green;
+    color: white;
+}

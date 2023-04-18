@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Verduritas</title>
+</head>
+<body>
+    <h1 id="cabecera">Verduritas</h1>
+    User:<span id="user"></span>
+    <div id="menu">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="productos.php" target="iframe">Productos</a></li>
+            <li><a href="clientes.php" target="iframe">Clientes</a></li>
+            <li><a href="facturacion.php" target="iframe">Facturación</a></li>
+            <li><a href="usuarios.php" target="iframe">Usuarios</a></li>
+            <li><a href="proveedor.php" target="iframe">Proveedor</a></li>
+        </ul>
+    </div>
+    <div>
+        <iframe frameborder="0" name="iframe" id="iframe" width="100%" height="600px"></iframe>
+    </div>
+    <script>
+        cookieUser="";
+        misCookies = document.cookie;
+        listaCookies = misCookies.split(";");
+        for (i in listaCookies) {
+            busca = listaCookies[i].search("user");
+            if (busca > -1) {
+                cookieUser=listaCookies[i];
+            }
+        }
+        document.getElementById("user").innerHTML=cookieUser;
+    </script>
+</body>
+</html>
